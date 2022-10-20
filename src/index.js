@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/news', (req, res) => {
-    
+    console.log(req.query);
     res.render('news');
 });
 app.listen(port,()=> console.log(`Listenning at http://localhost:${port}`));
