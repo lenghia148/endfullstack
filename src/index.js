@@ -4,7 +4,10 @@ const hbs  = require('express-handlebars')
 const route = require('./routes')
 const app =  express();
 const port = 3000;
+const db =  require('./config/db')
 
+//connect to db
+db.connect()
 //handlebar 
 app.use(express.static(path.join(__dirname, 'public')));
 
