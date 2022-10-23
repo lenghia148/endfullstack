@@ -1,17 +1,16 @@
 const HerbalTea = require('../models/HerbalTea')
-
+const  { mutipleMongooseToObj } = require('../../util/mongoose')
 class SiteController {
     //[GET] / 
-    index(req,res)
+    index(req,res,next)
     {
-        // res.render('home')
-        HerbalTea.find({},function(err,herbalTeas){
-         
-            if(!err) res.json(herbalTeas)
-            // res.status(400).json({error:"Error!!!"})
-
-        })
     
+        HerbalTea.find({})
+            .then (herbalTeas => res.render('home',
+            {
+                herbalTeas:mutipleMongooseToObj(herbalTeas)
+            }))
+            .catch(next)
         
     }
 }
