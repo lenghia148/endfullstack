@@ -2,10 +2,15 @@
   <div class="row">
     {{#each herbalTeas}}
     <div class="col-sm-6 col-lg-4">
-      <div class="card card-herbalTeas">
+      <a href="/herbal-tea/{{this.slug}}">
+        <div class="card card-herbalTeas">
         <img src="{{this.image}}" class="card-img-top" alt="..." />
+      </a>
+
         <div class="card-body">
+          <a href="/herbal-tea/{{this.slug}}">
           <h5 class="card-title">{{this.name}}</h5>
+          </a>
           <p class="card-text">{{this.price}}</p>
           <a href="#" class="btn btn-primary">THÊM</a>
         </div>
