@@ -3,6 +3,7 @@ const router = express.Router();
 const siteController = require('../app/controllers/SiteController')
 
 //newsController.index
+router.use('/:slug',siteController.show)
 router.use('/',siteController.index)
 
 

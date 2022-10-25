@@ -2,6 +2,10 @@ const HerbalTea = require('../models/HerbalTea')
 const  { mutipleMongooseToObj } = require('../../util/mongoose')
 class SiteController {
     //[GET] / 
+    show(req,res,next)
+    {
+        res.send("hello");
+    }
     index(req,res,next)
     {
     
@@ -13,5 +17,7 @@ class SiteController {
             .catch(next)
         
     }
+
+    
 }
 module.exports=  new SiteController;
