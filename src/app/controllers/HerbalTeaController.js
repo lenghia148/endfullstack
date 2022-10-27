@@ -14,10 +14,25 @@ class HerbalTeaController {
         })
         .catch(next)
     }
-    create(req,res,nex)
+     //[GET] / herbal-tea/create
+    create(req,res,next)
     {
         res.render('herbalteas/create')
     }
+     //[POST] / herbal-tea/store
+     store(req,res,next)
+     {
+       const herbalTea = new HerbalTea(req.body)
+       herbalTea.save()
+        .then(()=> res.redirect(`/`))
+        .catch(error=>{
+            
+        })
+        
+        // res.render('herbalteas/store')
+      
+         
+     }
     index(req,res,next)
     {
     

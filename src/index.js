@@ -10,6 +10,8 @@ const db =  require('./config/db')
 db.connect()
 //handlebar 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded())
+app.use(express.json())
 
 
 app.engine('hbs', hbs.engine({

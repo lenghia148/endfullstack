@@ -3,8 +3,10 @@ const router = express.Router();
 const herbalTeaController = require('../app/controllers/HerbalTeaController')
 
 //newsController.index
-router.use('/create',herbalTeaController.create)
-router.use('/:slug',herbalTeaController.show)
-router.use('/',herbalTeaController.index)
+router.post('/store',herbalTeaController.store)
+router.get('/create',herbalTeaController.create)
+
+router.get('/:slug',herbalTeaController.show)
+router.get('/',herbalTeaController.index)
 
 module.exports = router
