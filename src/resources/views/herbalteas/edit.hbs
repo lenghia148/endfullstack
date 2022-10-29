@@ -1,0 +1,17 @@
+<div class="mt-4">
+<form class="mt-4" method="POST" action="/herbal-tea/{{herbalTeas._id}}?_method=PUT" >
+  <div class="mb-3">
+    <label for="name" class="form-label"  >Sửa sản phẩm</label>
+    <textarea class="form-control"   name="name" id="name" >{{herbalTeas.name}}</textarea>
+  </div>
+  <div class="mb-3">
+    <label for="price" class="form-label"  >Thêm Giá</label>
+    <input type="number" class="form-control"  value="{{herbalTeas.price}}" name="price" id="price" >
+  </div>
+  <div class="mb-3">
+    <label for="image" class="form-label"  >Thêm hình ảnh</label>
+    <input type="text" class="form-control" value="{{herbalTeas.image}}"  name="image" id="image" >
+  </div>
+  <button type="submit" class="btn btn-primary">LƯU LẠI</button>
+</form>
+</div>

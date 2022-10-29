@@ -11,4 +11,4 @@ const HerbalTea = new Schema({
     slug: {type:String, slug:'name', unique:true}
   });
 
-module.exports = mongoose.model('HerbalTea', HerbalTea);
+module.exports = mongoose.model('HerbalTea', HerbalTea); 
