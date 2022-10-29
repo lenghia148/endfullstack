@@ -1,4 +1,4 @@
-const Test = require('../models/Test')
+const HerbalTea = require('../models/HerbalTea')
 class NewsController {
     //[GET] / news/hello
   
