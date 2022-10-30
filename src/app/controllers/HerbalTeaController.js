@@ -43,6 +43,12 @@ class HerbalTeaController {
         .then(()=> res.redirect('/me/stored/products'))
         .catch(next)
   }
+  //[DELETE] /herbal-tea/:id
+  delete(req, res, next) {
+    HerbalTea.deleteOne({_id:req.params.id})
+      .then(()=>res.redirect('back'))
+      .catch(next)
+  }
   index(req, res, next) {
     // HerbalTea.find({})
     //     .then (herbalTeas => res.render('herbalTea',

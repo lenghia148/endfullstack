@@ -7,6 +7,7 @@ router.post('/store',herbalTeaController.store)
 router.get('/create',herbalTeaController.create)
 router.get('/:id/edit',herbalTeaController.edit)
 router.put('/:id',herbalTeaController.update)
+router.delete('/:id',herbalTeaController.delete)
 router.get('/:slug',herbalTeaController.show)
 router.get('/',herbalTeaController.index)
 
