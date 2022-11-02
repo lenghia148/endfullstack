@@ -5,11 +5,11 @@ async function connect(){
    try
     {
         await mongoose.connect('mongodb://localhost:27017/i_love_tea_product_dev');
-    
-    console.log("success");
+        console.log("I'm Ok!");
+   
     }
     catch(error){
-        console.log("fail!!");
+        
     }
 }
 module.exports = {connect}
