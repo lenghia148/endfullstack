@@ -5,6 +5,7 @@ const herbalTeaController = require('../app/controllers/HerbalTeaController')
 //newsController.index
 router.post('/store',herbalTeaController.store)
 router.get('/create',herbalTeaController.create)
+router.post('/handle-form-actions',herbalTeaController.handleFormActions)
 router.get('/:id/edit',herbalTeaController.edit)
 router.put('/:id',herbalTeaController.update)
 router.patch('/:id/restore',herbalTeaController.restore)

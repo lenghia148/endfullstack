@@ -31,35 +31,48 @@ class HerbalTeaController {
   //[get] / herbal-tea/:id/edit
   edit(req, res, next) {
     HerbalTea.findById(req.params.id)
-        .then(herbalTeas => res.render("herbalteas/edit",{
-            herbalTeas:mongooseToOjb(herbalTeas)
-        }))
-        .catch(next)
-
+      .then((herbalTeas) =>
+        res.render("herbalteas/edit", {
+          herbalTeas: mongooseToOjb(herbalTeas),
+        })
+      )
+      .catch(next);
   }
   //[PUT] /herbal-tea/:id
   update(req, res, next) {
-    HerbalTea.updateOne({_id:req.params.id},req.body)
-        .then(()=> res.redirect('/me/stored/products'))
-        .catch(next)
+    HerbalTea.updateOne({ _id: req.params.id }, req.body)
+      .then(() => res.redirect("/me/stored/products"))
+      .catch(next);
   }
   //[DELETE] /herbal-tea/:id
   delete(req, res, next) {
-    HerbalTea.delete({_id:req.params.id})
-      .then(()=>res.redirect('back'))
-      .catch(next)
+    HerbalTea.delete({ _id: req.params.id })
+      .then(() => res.redirect("back"))
+      .catch(next);
   }
-//[patch] /herbal-tea/:id/restore
+  //[patch] /herbal-tea/:id/restore
   restore(req, res, next) {
-    HerbalTea.restore({_id:req.params.id})
-      .then(()=>res.redirect('back'))
-      .catch(next)
+    HerbalTea.restore({ _id: req.params.id })
+      .then(() => res.redirect("back"))
+      .catch(next);
   }
   //[DELETE] /herbal-tea/:id/force
   forceDelete(req, res, next) {
-    HerbalTea.deleteOne({_id:req.params.id})
-      .then(()=>res.redirect('back'))
-      .catch(next)
+    HerbalTea.deleteOne({ _id: req.params.id })
+      .then(() => res.redirect("back"))
+      .catch(next);
+  }
+  //[POST] /herbal-tea/handle-form-actions
+  handleFormActions(req, res, next) {
+    switch (req.body.action) {
+      case "delete":
+        HerbalTea.delete({ _id: { $in: req.body.productIds } })
+          .then(() => res.redirect("back"))
+          .catch(next);
+        break;
+      default:
+        res.json({ mesage: "Error" });
+    }
   }
   index(req, res, next) {
     // HerbalTea.find({})
