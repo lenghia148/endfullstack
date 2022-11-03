@@ -6,7 +6,7 @@ class MeController {
 //[GET] /me/stored/products
     index(req,res,next)
     {
-        HerbalTea.find({})
+        HerbalTea.find({ isDelete: null })
         .then(herbalTeas=> res.render('me/stored-products',{
             herbalTeas: mutipleMongooseToObj(herbalTeas)}))
         .catch(next)
