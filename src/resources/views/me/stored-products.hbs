@@ -2,7 +2,9 @@
 
   <div>
     <h3>Sản phẩm của tôi</h3>
-    <a href="/me/trash/products">Thùng rác</a>
+    {{#if deletedCount}}
+    <a href="/me/trash/products">Thùng rác ({{deletedCount}})</a>
+    {{/if }}
   </div>
   <table class="table mt-4">
     <thead>
