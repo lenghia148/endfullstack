@@ -45,6 +45,18 @@ class HerbalTeaController {
   }
   //[DELETE] /herbal-tea/:id
   delete(req, res, next) {
+    HerbalTea.delete({_id:req.params.id})
+      .then(()=>res.redirect('back'))
+      .catch(next)
+  }
+//[patch] /herbal-tea/:id/restore
+  restore(req, res, next) {
+    HerbalTea.restore({_id:req.params.id})
+      .then(()=>res.redirect('back'))
+      .catch(next)
+  }
+  //[DELETE] /herbal-tea/:id/force
+  forceDelete(req, res, next) {
     HerbalTea.deleteOne({_id:req.params.id})
       .then(()=>res.redirect('back'))
       .catch(next)

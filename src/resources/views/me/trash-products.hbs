@@ -1,0 +1,116 @@
+<div class="mt-4">
+
+  <div>
+    <a href="/me/stored/products"> Danh sách sản phẩm</a>
+    <h3>Sản phẩm đã xóa</h3>
+    
+  </div>
+  <table class="table mt-4">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tên sản phẩm</th>
+        <th scope="col">Giá</th>
+        <th scope="col">Hình ảnh sản phẩm</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each herbalTeas}}
+        <tr>
+          <th scope="row">{{sum @index 1}}</th>
+          <td>{{this.name}}</td>
+          <td>{{this.price}}</td>
+          <td>{{this.slug}}</td>
+          <td>
+            <a href="" class="btn btn-link btn-restore" data-id="{{this._id}}">Khôi phục</a>
+            <a
+              href=""
+              class="btn btn-link"
+              data-bs-toggle="modal"
+              data-bs-id="{{this._id}}"
+              data-bs-target="#delete-products-modal"
+            >Xóa vĩnh viễn</a>
+          </td>
+        </tr>
+        {{else}}
+         <tr>
+          <td colspan="5" class="text-center">
+            Thùng rác trống.
+            <a href="/me/stored/products">Danh sách khóa học </a>
+          </td>
+         </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+{{! <---Comfimr delete---> }}
+<div id="delete-products-modal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Xóa vĩnh viễn ?</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Hành động này không không thể khôi phục. Bạn vẫn muốn xóa ?</p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >Hủy</button>
+        <button id="btn-delete-product" type="button" class="btn btn-danger">Xóa bỏ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form name="restore-product-form" method="POST"  ></form>
+<form name="delete-product-form" method="POST"  ></form>
+
+
+
+{{!-- get id herbal-tea product --}}
+<script>
+
+  document.addEventListener('DOMContentLoaded', function()
+  {
+
+  
+    var productId;
+    var restoreForm = document.forms['restore-product-form'];
+    var restoreBtn = $('.btn-restore')
+    var deleteForm = document.forms['delete-product-form'];
+    const deleteProductsModal = document.getElementById('delete-products-modal');
+    deleteProductsModal.addEventListener('show.bs.modal', event => { 
+      const button = event.relatedTarget;
+      productId = button.getAttribute('data-bs-id');
+      })
+
+  //delete Button
+
+   const  deleteProductsBtn = document.getElementById('btn-delete-product');
+  deleteProductsBtn.onclick = function() {
+  
+    deleteForm.action='/herbal-tea/'+productId+ '/force?_method=DELETE';
+    deleteForm.submit()
+  }
+ //restore Button
+    restoreBtn.click(function(e)
+    { 
+      e.preventDefault()
+      var productId = $(this).data('id')
+      console.log($(this).data('id'))
+      restoreForm.action='/herbal-tea/'+productId+ '/restore?_method=PATCH';
+      restoreForm.submit()
+    })
+  });
+</script>
