@@ -128,7 +128,7 @@
  
       var productId;
       var deleteForm = document.forms['delete-product-form']; 
-      var containerForm = document.forms['container-form']; 
+      var containerForm = $('form[name="container-form"]');
       const deleteProductsModal = document.getElementById('delete-products-modal');
       var checkboxAll = $('#checkbox-all');
       var productItemCheckboxs= $('input[name="productIds[]"]');
@@ -141,7 +141,7 @@
       deleteProductsBtn.onclick = function() {
         deleteForm.action='/herbal-tea/'+productId+ '?_method=DELETE';
         deleteForm.submit() };
-
+    console.log(containerForm)
       //checkboxAll all changed
       checkboxAll.change(function()
       {
@@ -159,9 +159,10 @@
       })
       //check all submit button clicked
      
-      checkAllSubmitBtn.on('submit',function (e)
-      {
-        var isSubmitable = !$(this).hasClass('disabled')
+      containerForm.on('submit',function (e)
+      {  
+        
+        var isSubmitable = !$(checkAllSubmitBtn).hasClass('disabled')
         if(!isSubmitable){
           e.preventDefault();
         }
