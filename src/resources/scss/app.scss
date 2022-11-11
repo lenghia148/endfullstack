@@ -15,7 +15,21 @@
     font-size: x-large;
     margin: 0 4px;
 }
-.logo-image
+.card-body-content
 {
-    
+    padding: 1.6rem 0;
 }
+.herbal-news
+{   
+    border:none;
+}
+.image-news
+{
+    transition: .5s ease all; width: 100%; object-fit:cover;
+}
+.image-news:hover
+{
+   transform: scale(1.01);
+}
+
+
