@@ -2,8 +2,22 @@ const HerbalTea = require('../models/HerbalTea')
 const HerbalTeaNews = require('../models/HerbalTeaNews')
 const  { mutipleMongooseToObj } = require('../../util/mongoose')
 class SiteController {
-    //[GET] / 
-  
+    //[GET] /
+    //[get] /contact 
+    contact(req,res,next)
+    {
+        res.render("contact")
+    }
+    //[get] /wholesale 
+    wholesale(req,res,next)
+    {
+        res.render("wholesale")
+    }
+    //[get] /introduce 
+    introduce(req,res,next)
+    {
+        res.render("introduce")
+    }
     index(req,res,next)
     {
     
