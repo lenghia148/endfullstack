@@ -3,7 +3,7 @@
 <br />
 <div
   id="carouselExampleIndicators"
-  class="carousel carousel-dark pt-1 pb-1 shadow p-3 mb-5 bg-body rounded"
+  class="carousel carousel-dark pt-2 pb-2  shadow  mb-5 bg-body rounded"
   data-bs-ride="true"
   style="border: none;background-image: linear-gradient(#FFFAD7,#F7F6F2)"
 >
@@ -33,21 +33,21 @@
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="10000">
         <img
-          src="https://toiyeutra.vn/upload/img/banner/tra_hoa_cuc_chi_hung_yen.jpg"
+          src="/img/tra_hoa_cuc_chi_hung_yen.jpg"
           class="d-block w-100"
           alt="..."
         />
       </div>
       <div class="carousel-item" data-bs-interval="10000">
         <img
-          src="https://toiyeutra.vn/upload/img/banner/atiso_do.jpg"
+          src="/img/slide1.png"
           class="d-block w-100"
           alt="..."
         />
       </div>
       <div class="carousel-item" data-bs-interval="10000">
         <img
-          src="https://toiyeutra.vn/upload/img/banner/coc_pha_tra_thuy_tinh1.jpg"
+          src="/img/slide2.png"
           class="d-block w-100"
           alt="..."
         />
@@ -120,7 +120,7 @@
     class="row shadow p-3 mb-5 bg-body rounded"
     style="background-image: linear-gradient(#FFFAD7,#F7F6F2)"
   >
-    <div class="mb-3 d-flex justify-content-center mt-3">
+    <div class=" d-flex justify-content-center mt-3">
 
       <p class="fw-normal fs-4 text-secondary">
 
@@ -136,21 +136,23 @@
         >
           <a
             href="/herbal-tea/{{this.slug}}"
-            class="card-herbalTeas shadow-lg p-3 mb-5 bg-body rounded"
+            class="card-herbalTeas shadow-lg p-1 mb-1 bg-body rounded"
           >
             <img src="{{this.image}}" class="card-img-top" />
           </a>
 
           <div class="card-body">
             <a href="/herbal-tea/{{this.slug}}" class="herbalImg">
-              <h5 class="card-title herbalImg">{{this.name}}</h5>
+              <h5 class="card-title herbalImg fw-normal">{{this.name}}</h5>
             </a>
-            <p class="card-text">{{this.price}}</p>
-            <a href="#" class="btn btn-primary text-success">THÊM</a>
+            <p class="card-text fw-light" style="font-size: smaller;">{{this.price}}.000đ</p>
+            <a href="#" class="btn btn-secondary text-white">THÊM</a>
           </div>
         </div>
       </div>
     {{/each}}
+
+    {{!-- button all --}}
     <div class="d-flex justify-content-center mb-3">
       <button type="button" class="btn btn-outline-secondary" style="width:20%">XEM
         TẤT CẢ SẢN PHẨM</button>
@@ -182,9 +184,8 @@
             style="width:307px; height:200px;"
           />
           <div class="card-body card-body-content">
-            <p class="card-title fw-bold">{{this.name}}</p>
-            <p class="card-text fw-light">{{this.detail}}</p>
-
+            <p class="card-title fw-normal" style="font-size: smaller;">{{this.name}}</p>
+            <p class="card-text fw-light" style="font-size: smaller;">{{this.detail}}</p>
           </div>
         </div>
       </div>
