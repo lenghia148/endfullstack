@@ -1,11 +1,12 @@
 {{! Slide }}
 
+<br />
 <div
   id="carouselExampleIndicators"
-  class="carousel carousel-dark"
+  class="carousel carousel-dark pt-1 pb-1 shadow p-3 mb-5 bg-body rounded"
   data-bs-ride="true"
- 
- >
+  style="border: none;background-image: linear-gradient(#FFFAD7,#F7F6F2)"
+>
   <div class="container-fluid">
     <div class="carousel-indicators">
       <button
@@ -75,52 +76,69 @@
 </div>
 
 {{! NEWs }}
-<br />
-<p class="fw-semibold fs-5">CÁCH PHA TRÀ ĐÚNG CÁCH?</p>
-<br />
-<div class="card mb-3 px-4 py-4">
+
+<div
+  class="card mb-3 px-4 py-4 shadow p-3 mb-5 bg-body rounded"
+  style="border:none;background-image: linear-gradient(#FFFAD7,#F7F6F2);"
+>
+  <div class="mb-3 d-flex justify-content-center">
+
+    <p class="fw-normal fs-4 text-secondary">
+
+      CÁCH PHA TRÀ ĐÚNG CÁCH?
+    </p>
+  </div>
   <div class="row g-0">
     <div class="col-md-4">
       <img
-        src="https://toiyeutra.vn/upload/img/pages/thang-nay-uong-tra-gi1.jpg"
+        src="/img/cachphatra.jpg"
         class="img-fluid rounded-start"
         alt="..."
       />
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <p class="card-text">Trà hoa hồng từ lâu đã được ưa chuộng bởi hương
-          thơm nhẹ nhàng, ngọt ngào đặc trưng của nó. Do có hàm lượng vitamin C
-          cao nên hoa hồng rất có ích trong việc làm đẹp, giúp cơ thể khỏe mạnh,
-          thải độc, mát gan. Là loài hoa tượng trưng cho tình yêu nên mỗi khi
-          thưởng thức trà hoa hồng Đà Lạt, ta đều cảm nhận được một điều gì đó
-          rất sâu sắc, lưu luyến, không muốn xa rời...
+        <p class="card-text">Trà dưỡng nhan Cita Herb là thức trà thảo mộc quen
+          thuộc, thơm ngon và bổ dưỡng. Từ nhiều thế kỷ trước, con người đã sử
+          dụng trà dưỡng nhan như một phương thuốc tự nhiên giúp giảm stress, bổ
+          huyết dưỡng nhan, chống lão hóa, đẹp da. Hãy cùng Tôi yêu thảo mộc học
+          ngay cách pha trà dưỡng nhan thơm ngon và đơn giản tại nhà nhé!
         </p>
-        <a type="button" href="" class="btn btn-outline-dark">CÁCH PHA TRÀ THẢO MỘC</a>
+        <a type="button" href="" class="btn btn-outline-secondary" >CÁCH PHA TRÀ THẢO
+          MỘC</a>
       </div>
     </div>
   </div>
 </div>
 
 {{! trend }}
-<br />
-<hr />
-<br />
-<div class="d-flex justify-content-between">
-  <p class="fw-semibold fs-5">XU HƯỚNG TUẦN NÀY</p>
-  <button type="button" class="btn btn-outline-dark">XEM TẤT CẢ SẢN PHẨM</button>
-</div>
-<br />
-<hr />
 
 {{! Content }}
+
 <div class="mt-4">
-  <div class="row">
+  <div
+    class="row shadow p-3 mb-5 bg-body rounded"
+    style="background-image: linear-gradient(#FFFAD7,#F7F6F2)"
+  >
+    <div class="mb-3 d-flex justify-content-center mt-3">
+
+      <p class="fw-normal fs-4 text-secondary">
+
+        XU HƯỚNG TUẦN NÀY
+      </p>
+    </div>
     {{#each herbalTeas}}
-      <div class="col-sm-6 col-lg-3 card-herbalTeas">
-        <div class=" card card-herbalTeas">
-          <a href="/herbal-tea/{{this.slug}}" class=" card-herbalTeas border border-2">
-            <img src="{{this.image}}" class="card-img-top "  />
+
+      <div class="col-sm-6 col-lg-3 card-herbalTeas" style="border: none;">
+        <div
+          class="card card-herbalTeas shadow-lg p-3 mb-5 bg-body rounded"
+          style="border: none;"
+        >
+          <a
+            href="/herbal-tea/{{this.slug}}"
+            class="card-herbalTeas shadow-lg p-3 mb-5 bg-body rounded"
+          >
+            <img src="{{this.image}}" class="card-img-top" />
           </a>
 
           <div class="card-body">
@@ -128,28 +146,44 @@
               <h5 class="card-title herbalImg">{{this.name}}</h5>
             </a>
             <p class="card-text">{{this.price}}</p>
-            <a href="#" class="btn btn-primary">THÊM</a>
+            <a href="#" class="btn btn-primary text-success">THÊM</a>
           </div>
         </div>
       </div>
     {{/each}}
-
+    <div class="d-flex justify-content-center mb-3">
+      <button type="button" class="btn btn-outline-secondary" style="width:20%">XEM
+        TẤT CẢ SẢN PHẨM</button>
+    </div>
   </div>
 </div>
 
 {{! Tin tức }}
-<br />
-<hr />
-<p class="fw-semibold fs-5 d-flex justify-content-center">TIN TỨC</p>
-<div class="mt-4 ">
-  <div class="row" >
+
+<div class="mt-4">
+
+  <div
+    class="row shadow-lg p-3 mb-5 bg-body rounded"
+    style="background-image: linear-gradient(#F6F6C9,#F7F6F2)"
+  >
+    <div class="mb-3 d-flex justify-content-center mt-3">
+
+      <p class="fw-normal fs-4 text-secondary">
+
+        TIN TỨC
+      </p>
+    </div>
     {{#each herbalTeaNews}}
-      <div class="col-sm-6 col-lg-3 ">
-        <div class="card herbal-news" >
-          <img src="{{this.image}}" class="img img-fluid image-news"  style="width:307px; height:200px;" />
+      <div class="col-sm-6 col-lg-3">
+        <div class="card herbal-news shadow-lg p-3 mb-5 bg-body rounded">
+          <img
+            src="{{this.image}}"
+            class="img img-fluid image-news"
+            style="width:307px; height:200px;"
+          />
           <div class="card-body card-body-content">
-            <p class="card-title fw-bold ">{{this.name}}</p>
-            <p class="card-text fw-light ">{{this.detail}}</p>
+            <p class="card-title fw-bold">{{this.name}}</p>
+            <p class="card-text fw-light">{{this.detail}}</p>
 
           </div>
         </div>
