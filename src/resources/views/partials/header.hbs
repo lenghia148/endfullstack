@@ -39,10 +39,35 @@
           <a class="nav-link active fw-normal fs-5 text-secondary" aria-current="page" href="/contact">Liên Hệ</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      
+      <ul class="navbar-nav col-1">
+      <li class="nav-item">
+        <a href="" class="nav-link">
+          <i class="fa-solid fa-cart-shopping">
+          </i>
+        </a>
+      </li>
+
+      <li class="nav-item dropdown col-1">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-user px-1"></i>
+          Nghĩa Lê
+        </a>
+        <ul class="dropdown-menu dropdown-menu-light">
+          <li><a class="dropdown-item" href="/herbal-tea/create">Thêm sản phẩm</a></li>
+          <li><a class="dropdown-item" href="/me/stored/products">Sửa sản phẩm</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+        </ul>
+      </li>
+    </ul>
     </div>
   </div>
 </nav>
@@ -98,35 +123,9 @@
         </li>
 
       </ul> --}}
-    </div>
+    {{!-- </div> --}}
 
-    {{!-- <ul class="navbar-nav col-1">
-      <li class="nav-item">
-        <a href="" class="nav-link">
-          <i class="fa-solid fa-cart-shopping">
-          </i>
-        </a>
-      </li>
-
-      <li class="nav-item dropdown col-1">
-        <a
-          class="nav-link dropdown-toggle"
-          href="#"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <i class="fa-solid fa-user px-1"></i>
-          Nghĩa Lê
-        </a>
-        <ul class="dropdown-menu dropdown-menu-light">
-          <li><a class="dropdown-item" href="/herbal-tea/create">Thêm sản phẩm</a></li>
-          <li><a class="dropdown-item" href="/me/stored/products">Sửa sản phẩm</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
-        </ul>
-      </li>
-    </ul> --}}
+    
 
 
   {{!-- </div>
